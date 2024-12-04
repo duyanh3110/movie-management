@@ -1,9 +1,6 @@
 package vn.duynguyen.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.HashSet;
@@ -31,4 +28,7 @@ public class Role extends AbstractEntity {
     @OneToMany(mappedBy = "role")
     @Builder.Default
     private Set<RoleHasPermission> permissions = new HashSet<>();
+
+    @OneToMany(mappedBy = "role")
+    private Set<Group> groups = new HashSet<>();
 }

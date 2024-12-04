@@ -21,8 +21,8 @@ public class Group extends AbstractEntity {
     @Column(name = "description")
     private String description;
 
-    @OneToOne
-    @JoinColumn(name = "role_id")
+    @ManyToOne
+    @JoinColumn(name="role_id", nullable = false)
     private Role role;
 
     @OneToMany(mappedBy = "group")
