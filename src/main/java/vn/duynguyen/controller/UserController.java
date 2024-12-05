@@ -16,8 +16,6 @@ import vn.duynguyen.dto.response.ResponseError;
 import vn.duynguyen.service.UserService;
 import vn.duynguyen.util.UserStatus;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/user")
 @Validated
@@ -54,7 +52,7 @@ public class UserController {
     }
 
     @Operation(summary = "Update user status", description = "API update user status")
-    @PutMapping("/{userId}")
+    @PostMapping("/{userId}")
     public ResponseData<String> changeUserStatus(@PathVariable("userId") String userId, @Valid @RequestBody UserStatus status) {
         log.info("Change status userId: {}", userId);
         try {
