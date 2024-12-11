@@ -2,8 +2,11 @@ package vn.duynguyen.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.*;
+
+import java.util.Set;
 
 @Setter
 @Getter
@@ -16,4 +19,7 @@ public class ServiceType extends AbstractEntity {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "serviceType")
+    private Set<ServiceManager> serviceManagers;
 }
