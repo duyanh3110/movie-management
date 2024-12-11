@@ -44,7 +44,7 @@ public class MovieServiceImpl implements MovieService {
     }
 
     /**
-     * Update user by userId
+     * Update movie by movieId
      *
      * @param movieId
      * @param request
